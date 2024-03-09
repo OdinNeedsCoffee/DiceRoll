@@ -15,7 +15,7 @@ class DiceRoll:
         self.roll_again = "y"
         self.waiting = []
 
-        self.greeting = input("Would you like to try your luck? (y/n)")
+        self.greeting = input("Would you like to try your luck? (y/n)").strip().lower()
         if self.greeting.lower() != "y":
             print("See you next time")
         else:
@@ -24,7 +24,7 @@ class DiceRoll:
     def set_dice_quant(self):
         try:
             self.valid_responses = ["1", "one", "2", "two"]
-            self.dice_quant = input("Would you like to roll one or two dice?")
+            self.dice_quant = input("Would you like to roll one or two dice?").strip().lower()
             if self.dice_quant.lower() not in self.valid_responses:
                 raise ValueError("1/ one or 2/ two only")
             else:
